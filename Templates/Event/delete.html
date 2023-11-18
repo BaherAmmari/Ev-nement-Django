@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Confirmation de suppression de l'événement</h2>
+  
+  <p>Êtes-vous sûr de vouloir supprimer cet événement ? Cette action est irréversible.</p>
+  
+  <form method="post">
+    {% csrf_token %}
+    
+    <input type="submit" value="Supprimer" class="btn btn-danger">
+  </form>
+  
+{% endblock %}
+b b                                                          n    nnnb n

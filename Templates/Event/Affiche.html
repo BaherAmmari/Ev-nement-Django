@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<table border=1>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Category</th>
+        <th>Etat</th>
+        <th>Nbe Participante</th>
+        <th>Detail</th>
+        <th>DetailGeneric</th>
+        <th>Participate</th>
+        <th>Cancel</th>
+    </tr>
+    {% for e in ee%}
+    <tr>
+        <td>{{e.title}}</td>
+        <td>{{e.description}}</td>
+        <td>{{e.image}}</td>
+        <td>{{e.category}}</td>
+        <td>{{e.state}}</td>
+        <td>{{e.nbe_participant}}
+        <td><a href="{% url 'D' e.title %}">Detail</a></td>
+        <td><a href="{% url 'DD' e.id %}">Detail Generic</a></td>
+        <td><a href="{% url 'Participate' e.id %}">Participate</a></td>
+        <td><a href="{% url 'Cancel' id=e.id %}">Cancel Participate</a></td>
+        <td><a href="{% url 'Update' e.id %}">update</a></td>
+        <td><a href="{% url 'delete' e.id %}">Delete Event</a></td>
+        <td><a href="{% url 'deletee' e.id %}">Delete Fn</a></td>
+
+       </tr>
+    {%endfor%}
+
+</table>
+{%endblock%}
